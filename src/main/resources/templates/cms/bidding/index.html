@@ -1,0 +1,344 @@
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{layouts/cms-layout}">
+<head th:include="~{fragments/cms/head :: title('Overview')}">
+    <style layout:fragment="styles">
+    	/* Tabs*/
+		section .section-title {
+		    text-align: center;
+		    color: #007b5e;
+		    margin-bottom: 50px;
+		    text-transform: uppercase;
+		}
+		#tabs h6.section-title{
+		    color: #eee;
+		}
+		#tabs .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+		    color: #f3f3f3;
+		    background-color: transparent;
+		    border-color: transparent transparent #f3f3f3;
+		    border-bottom: 4px solid !important;
+		    font-size: 20px;
+		    font-weight: bold;
+		}
+		#tabs .nav-tabs .nav-link {
+		    border: 1px solid transparent;
+		    border-top-left-radius: .25rem;
+		    border-top-right-radius: .25rem;
+		    color: #6c757d;
+		    font-size: 20px;
+		}
+		#bidding-table th, td {
+		  border: 1px solid black;
+		  text-align: center;
+		  max-width: 10px;
+		}
+		#bidding-table .title {
+		    padding-left: 5px;
+		    text-align: left;
+		    width: 120px;
+		}
+		#bidding-table .filter {
+	       height: 20px;
+		}
+		#bidding-table .filter td {
+		   padding: 5px;
+		}
+		.date-filter {
+		    width: 110px;
+		    float: left;
+		    height: 30px;
+		}
+		.range {
+			float: left;
+    		margin: 0 4px 0 4px;
+		}
+    </style>
+    <th:block layout:fragment="others">
+    </th:block>
+</head>
+<body>
+<div layout:fragment="content">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+        	<li class="breadcrumb-item"><a href="/cms/main"><i class="fa fa-home"></i> Main</a></li>
+            <li class="breadcrumb-item"><a href="/cms/overview"><i class="fas fa-chart-bar"></i>&ensp;Bidding Management</a></li>
+        </ol>
+    </nav>
+    <div class="row" style="min-height: 85vh;">
+        <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel h-100">
+                <div class="x_title">
+                    <h2>Bidding Management</h2>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="x_content">
+                    <section id="tabs">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 ">
+									<nav>
+										<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+											<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">내서류가방</a>
+											<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">투찰결과</a>
+											<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">회원사관리</a>
+										</div>
+									</nav>
+									<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+										<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+											<div>
+           										<input type="text" id="from-date" class="form-control date-filter"/>
+												<span class="range">~</span>
+												<input type="text" id="to-date" class="form-control date-filter" />
+   											</div>
+											<table id="bidding-table" class="w-100">
+												<tr class="dayOfWeeks">
+													<td class="title"></td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>sun</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>sun</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>sun</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>sun</td>
+													<td>2</td>
+													<td>3</td>
+												</tr>
+												<tr class="days">
+													<td class="title"></td>
+													<td>1</td>
+													<td>2</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>8</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>1</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+													<td>5</td>
+													<td>6</td>
+													<td>7</td>
+													<td>1</td>
+													<td>2</td>
+													<td>3</td>
+													<td>4</td>
+												</tr>
+												<tr>
+													<td class="title">XXXXXX</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td class="title">XXXXXX</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td class="title">XXXXXX</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td class="title">XXXXXX</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+												</tr>
+												<tr>
+													<td class="title">XXXXXX</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+													<td>1</td>
+												</tr>
+											</table>
+										</div>
+										<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+										</div>
+										<div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script>
+</script>
