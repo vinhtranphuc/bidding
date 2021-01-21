@@ -27,15 +27,20 @@
 		    color: #6c757d;
 		    font-size: 20px;
 		}
+		#bidding-table {
+			border-collapse: unset;
+		}
 		#bidding-table th, td {
-		  border: 1px solid black;
+		  border: 1px solid #ccc;
 		  text-align: center;
 		  max-width: 10px;
 		}
 		#bidding-table .title {
-		    padding-left: 5px;
+	        padding-left: 5px;
 		    text-align: left;
-		    width: 120px;
+		    width: 150px;
+		    font-weight: bold;
+		    font-size: medium;
 		}
 		#bidding-table .filter {
 	       height: 20px;
@@ -48,9 +53,25 @@
 		    float: left;
 		    height: 30px;
 		}
+		.dayOfWeeks {
+			font-size: medium;
+    		font-weight: bold;
+		}
+		.day{
+			font-weight: bold;
+		}
 		.range {
 			float: left;
-    		margin: 0 4px 0 4px;
+    		margin: 4px 4px 0 4px;
+		}
+		#mydoc-tab .fas{
+		    font-size: large;
+    		margin: 6px;
+		}
+		.countNum {
+			background: #f7f7f7;
+    		font-weight: bold;
+    		cursor: pointer;
 		}
     </style>
     <th:block layout:fragment="others">
@@ -83,46 +104,61 @@
 											<a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">회원사관리</a>
 										</div>
 									</nav>
-									<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+									<div class="tab-content px-sm-0" id="mydoc-tab">
 										<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-											<div>
-           										<input type="text" id="from-date" class="form-control date-filter"/>
-												<span class="range">~</span>
-												<input type="text" id="to-date" class="form-control date-filter" />
+											
+											<div class="row pt-2 pb-1">
+												<div class="col-md-5">
+												</div>
+												<div class="d-inline-flex col-md-5">
+													<i class="fas fa-chevron-circle-left"></i>
+													<div class="from-date-div">
+														<input type="text" id="from-date" class="form-control date-filter" value="2020/12/21"/>
+	           											<i class="fas fa-calendar calendar"></i>
+													</div>
+													<span class="range">~</span>
+													<input type="text" id="to-date" class="form-control date-filter" value="2021/1/21" disabled />
+													<i class="fas fa-chevron-circle-right"></i>
+													<button type="button" class="btn btn-secondary btn-sm ml-2">검색</button>
+													
+	   											</div>
+	   											<div class="col-md-2">
+	   												<button type="button" class="btn btn-outline-secondary btn-sm float-right">오늘</button>
+	   											</div>
    											</div>
 											<table id="bidding-table" class="w-100">
 												<tr class="dayOfWeeks">
 													<td class="title"></td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
+													<td>mon</td>
+													<td>tue</td>
+													<td>wed</td>
+													<td>thu</td>
+													<td>fri</td>
+													<td>sat</td>
 													<td>sun</td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
+													<td>mon</td>
+													<td>tue</td>
+													<td>wed</td>
+													<td>thu</td>
+													<td>fri</td>
+													<td>sat</td>
 													<td>sun</td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
+													<td>mon</td>
+													<td>tue</td>
+													<td>wed</td>
+													<td>thu</td>
+													<td>fri</td>
+													<td>sat</td>
 													<td>sun</td>
-													<td>2</td>
-													<td>3</td>
-													<td>4</td>
-													<td>5</td>
-													<td>6</td>
-													<td>7</td>
+													<td>mon</td>
+													<td>tue</td>
+													<td>wed</td>
+													<td>thu</td>
+													<td>fri</td>
+													<td>sat</td>
 													<td>sun</td>
-													<td>2</td>
-													<td>3</td>
+													<td>mon</td>
+													<td>tue</td>
 												</tr>
 												<tr class="days">
 													<td class="title"></td>
@@ -158,171 +194,174 @@
 													<td>4</td>
 												</tr>
 												<tr>
-													<td class="title">XXXXXX</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
+													<td class="title">참가등록마감</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
 												</tr>
 												<tr>
-													<td class="title">XXXXXX</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
+													<td class="title">공동도급협정마감</td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">6</td>
+													<td></td>
+													<td class="countNum">4</td>
+													<td></td>
+													<td class="countNum">3</td>
+													<td></td>
+													<td class="countNum">2</td>
+													<td></td>
+													<td class="countNum">3</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td class="countNum">6</td>
+													<td class="countNum">8</td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">2</td>
+													<td class="countNum">3</td>
+													<td></td>
+													<td class="countNum">9</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">2</td>
+													<td class="countNum">3</td>
+													<td class="countNum">1</td>
+													<td class="countNum">2</td>
+													<td class="countNum">1</td>
 												</tr>
 												<tr>
-													<td class="title">XXXXXX</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
+													<td class="title">현장설명</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">2</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
 												</tr>
 												<tr>
-													<td class="title">XXXXXX</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
+													<td class="title">투찰마감</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">4</td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">3</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
 												</tr>
 												<tr>
-													<td class="title">XXXXXX</td>
+													<td class="title">개찰일</td>
 													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
-													<td>1</td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
+													<td></td>
+													<td class="countNum">1</td>
+													<td class="countNum">1</td>
 												</tr>
 											</table>
+											<div class="row p-3">
+												<button type="button" class="btn btn-outline-secondary btn-lg">엑셀업로드(버튼)</button>
+											</div>
 										</div>
 										<div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 										</div>
